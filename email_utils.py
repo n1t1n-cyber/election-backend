@@ -35,7 +35,7 @@ async def send_email(to_email: str, subject: str, html_body: str):
 
 async def send_verification_email(to_email: str, name: str, token: str):
     """Send email verification link."""
-    verify_url = f"{settings.BASE_URL}/auth/verify-email?token={token}"
+    verify_url = f"{settings.BASE_URL}/verify-email?token={token}"
     subject = f"✅ Verify Your Email - {settings.APP_NAME}"
     html_body = f"""
     <html>
