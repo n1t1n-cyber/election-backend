@@ -45,7 +45,7 @@ origins = [o for o in origins if o]
 # CORS — allow all origins for development (restrict in production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins, # Add your Vite port here
+    allow_origins=["*"], # Add your Vite port here
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
