@@ -36,7 +36,7 @@ import os
 origins = [
     "http://localhost:8080",
     "http://localhost:5173", # Default Vite port
-    "https://election-frontend-sage.vercel.app"
+    os.getenv("FRONTEND_URL", "")
 ]
 
 # Filter out empty strings
