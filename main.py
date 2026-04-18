@@ -29,6 +29,19 @@ A secure backend for managing elections, candidates, and votes with email verifi
     redoc_url="/redoc"
 )
 
+
+import os
+
+# CORS — allow all origins for development (restrict in production)
+origins = [
+    "http://localhost:8080",
+    "http://localhost:5173", # Default Vite port
+    os.getenv("FRONTEND_URL", ""),
+]
+
+# Filter out empty strings
+origins = [o for o in origins if o]
+
 # CORS — allow all origins for development (restrict in production)
 app.add_middleware(
     CORSMiddleware,
