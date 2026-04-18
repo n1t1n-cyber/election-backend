@@ -36,7 +36,7 @@ import os
 origins = [
     "http://localhost:8080",
     "http://localhost:5173", # Default Vite port
-    os.getenv("FRONTEND_URL", ""),
+    "https://election-frontend-sage.vercel.app"
 ]
 
 # Filter out empty strings
@@ -45,7 +45,7 @@ origins = [o for o in origins if o]
 # CORS — allow all origins for development (restrict in production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080"], # Add your Vite port here
+    allow_origins=origins, # Add your Vite port here
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
